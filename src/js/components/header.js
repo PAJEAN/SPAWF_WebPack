@@ -1,4 +1,4 @@
-import styles from '../../css/style.css';
+import styles from 'CSS/style.css';
 
 export default (function () {
     try {

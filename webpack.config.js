@@ -6,13 +6,13 @@ module.exports = {
   entry: path.resolve(__dirname, './src/index.js'), // Absolute path.
   output: {
     filename: '[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true, // Clean the output directory before emit.
+    path:     path.resolve(__dirname, 'dist'),
+    clean:    true, // Clean the output directory before emit.
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test:    /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -39,8 +39,11 @@ module.exports = {
     ]
   },
   resolve: {
-    // Add `.ts` as a resolvable extension (allows to add alias too).
-    extensions: [".js"]
+    extensions: [".js"],
+    alias: {
+      CSS: path.resolve(__dirname, './src/css/'),
+      JS:  path.resolve(__dirname, './src/js/'),
+    }
   },
   devServer: {
     host: '0.0.0.0',
@@ -58,7 +61,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src/img", to: "img/", noErrorOnMissing: true },
+        { from: "src/assets", to: "assets/", noErrorOnMissing: true },
       ],
     })
   ]

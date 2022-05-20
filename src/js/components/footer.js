@@ -1,4 +1,4 @@
-import styles from '../../css/style.css';
+import styles from 'CSS/style.css';
 
 export default (function () {
     try {
@@ -8,6 +8,7 @@ export default (function () {
         TEMPLATE.innerHTML = /* html */`
 
             <style>
+                /* Import base css */
                 ${styles.toString()}
                 
                 #main {

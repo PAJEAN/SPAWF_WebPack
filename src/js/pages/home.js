@@ -1,4 +1,4 @@
-import { store } from '../store/index';
+import { store } from 'JS/store/index';
 
 export default (function () {
     try {
@@ -25,7 +25,7 @@ export default (function () {
                         Begin a new project with this template !
                         <a href="#/about">About me !</a>
                         <div id="is-auth"></div>
-                        <img src="img/danger.png" alt="Danger">
+                        <img src="assets/img/danger.png" alt="Danger">
                     </div>
                 </div>
                 <wc-test></wc-test>

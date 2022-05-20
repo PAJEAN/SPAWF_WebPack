@@ -1,6 +1,4 @@
-# Phaser boilerplate Typescript & Webpack 5
-
-Add a ./dist and a ./src/assets folders.
+# SPAWF boilerplate with Webpack 5
 
 ## Installation
 ```
