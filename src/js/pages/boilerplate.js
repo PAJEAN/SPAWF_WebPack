@@ -7,7 +7,7 @@ try {
 
             <style></style>
 
-            <div id="main"></div>
+            <div id="main-page"></div>
 
         `;
 
@@ -18,7 +18,7 @@ try {
          
             connectedCallback () {
                 this.appendChild(TEMPLATE.content.cloneNode(true));
-                this.content = this.querySelector('#main');
+                this.content = this.querySelector('#main-page');
             }
           
             disconnectedCallback () {}
