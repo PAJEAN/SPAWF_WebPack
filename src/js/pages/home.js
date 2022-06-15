@@ -1,4 +1,5 @@
-import { store } from 'JS/store/index';
+/* CSS */
+import css from 'CSS/style.css';
 
 export default (function () {
     try {
@@ -8,27 +9,57 @@ export default (function () {
         TEMPLATE.innerHTML = /* html */`
 
             <style>
-                .container {
-                    margin: 100px;
-                    color: white;
+                /* Import base css */
+                ${css.toString()}
+
+                #main-page {
+                    min-height: 100vh;
                 }
-                a {
-                    color: rgb(var(--on-background-color));
+                .title {
+                    margin: 0 50px 50px 50px;
+                }
+                .title__text {
+                    font-size: 4.5em;
+                    font-weight: 600;
+                }
+                .sub-title {
+                    text-align: center;
                 }
             </style>
 
-            <div id="main">
-                <wc-header></wc-header>
-                <div class="container">
-                    <h3>New project</h3>
-                    <div>
-                        Begin a new project with this template !
-                        <a href="#/about">About me !</a>
-                        <div id="is-auth"></div>
-                        <img src="assets/img/danger.png" alt="Danger">
-                    </div>
+            <div id="main-page" class="${css.locals.flex}" style="--f__fd: column; --f__ai: center; --f__jc: center;">
+                <div class="title ${css.locals.flex}" style="--f__fd: column; --f__ai: center; --f__jc: center">
+                    <div class="title__text">SPAWF</div>
+                    <div class="sub-title">Une solution légère et native pour créer vos propres <i>Single Page Applications</i>.</div>
                 </div>
-                <wc-test></wc-test>
+
+                <div class="${css.locals.flex}" style="--f__ai: center; --f__jc: center; flex-wrap: wrap;">
+                    <!-- <img src="assets/img/danger.png" alt="Danger"> -->
+                    <wc-card data-color="orange">
+                        <div slot="title">Router</div>
+                        <div slot="content">
+                            Un router minimaliste est embarqué pour vous permettre de naviguer entre vos différentes pages web.
+                        </div>
+                    </wc-card>
+
+                    <wc-card data-color="violet">
+                        <div slot="title">Composants</div>
+                        <div slot="content">
+                            Utilisez la fonction native <i>customElements.define()</i> pour vous confectionner des composants personnels et universels.
+                        </div>
+                    </wc-card>
+
+                    <wc-card data-color="lightgreen">
+                        <div slot="title">State manager</div>
+                        <div slot="content">
+                            Dialoguez entre vos composants à l'aide d'un <i>State Manager</i> centralisé directement intégré.
+                        </div>
+                    </wc-card>
+                </div>
+
+                <div>
+                    <a href="#/about"> A propos </a>
+                </div>
             </div>
 
         `;
@@ -40,10 +71,7 @@ export default (function () {
             
             connectedCallback () {
                 this.appendChild(TEMPLATE.content.cloneNode(true));
-                this.content = this.querySelector('#main');
-
-                let div = this.content.querySelector('#is-auth');
-                div.innerHTML = store.state.is_auth;
+                this.content = this.querySelector('#main-page');
             }
             
             disconnectedCallback () {}

@@ -2,8 +2,7 @@
 import './js/lib/router';
 
 /*** Components ***/
-import './js/components/header';
-import './js/components/footer';
+import './js/components/wc-card';
 
 /*** Pages ***/
 import './js/pages/home';
@@ -16,9 +15,7 @@ import './js/pages/about';
 		tag.innerHTML = module.default.toString();
 		document.head.appendChild(tag);
 	};
-
-	import ('./css/style.css')
-	.then(load_css);
+	
 	import ('./css/var.css')
 	.then(load_css);
 })();

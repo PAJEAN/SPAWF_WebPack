@@ -5,17 +5,12 @@ export default (function () {
         const TEMPLATE = document.createElement('template');
         TEMPLATE.innerHTML = /* html */`
 
-            <style>
-                .container {
-                    margin: 100px;
-                    color: white;
-                }
-            </style>
+            <style></style>
 
             <div id="main">
                 <wc-header></wc-header>
                 <div class="container">
-                    <h3>Contact me !</h3>
+                    <h3>Une nouvelle page sans rechargement !</h3>
                 </div>
             </div>
 
