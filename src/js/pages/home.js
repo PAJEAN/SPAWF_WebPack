@@ -27,13 +27,13 @@ export default (function () {
                 }
             </style>
 
-            <div id="main-page" class="${css.locals.flex}" style="--f__fd: column; --f__ai: center; --f__jc: center;">
-                <div class="title ${css.locals.flex}" style="--f__fd: column; --f__ai: center; --f__jc: center">
+            <div id="main-page" class="flex" style="--f__fd: column; --f__ai: center; --f__jc: center;">
+                <div class="title flex" style="--f__fd: column; --f__ai: center; --f__jc: center">
                     <div class="title__text">SPAWF</div>
                     <div class="sub-title">Une solution légère et native pour créer vos propres <i>Single Page Applications</i>.</div>
                 </div>
 
-                <div class="${css.locals.flex}" style="--f__ai: center; --f__jc: center; flex-wrap: wrap;">
+                <div class="flex" style="--f__ai: center; --f__jc: center; flex-wrap: wrap;">
                     <!-- <img src="assets/img/danger.png" alt="Danger"> -->
                     <wc-card data-color="orange">
                         <div slot="title">Router</div>

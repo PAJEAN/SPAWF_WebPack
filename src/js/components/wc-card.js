@@ -85,10 +85,10 @@ try {
                 }
             </style>
 
-            <div id="main" class="${css.locals.flex}" style="--f__jc: center; --f__ai: center;">
+            <div id="main" class="flex" style="--f__jc: center; --f__ai: center;">
                 <div class="card">
                     <div class="circle">
-                        <h2 class="${css.locals.uppercase}">
+                        <h2 class="uppercase">
                             <slot name="title">Title</slot>
                         </h2>
                     </div>

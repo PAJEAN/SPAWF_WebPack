@@ -1,13 +1,10 @@
-import { actions } from './actions.js';
-import { mutations } from './mutations.js';
-import { getters } from './getters.js';
-import { state } from './state.js';
 import { Store } from './store.js';
 /* Modules */
+import { module as common } from 'JS/store/modules/common';
 
 export const store = new Store({
-    'actions': Object.assign(actions), // Object.assign(cible, ...sources).
-    'mutations': Object.assign(mutations),
-    'getters': Object.assign(getters),
-    'state': Object.assign(state)
+    'actions': Object.assign(common.actions), // Object.assign(cible, ...sources).
+    'mutations': Object.assign(common.mutations),
+    'getters': Object.assign(common.getters),
+    'state': Object.assign(common.state)
 });
