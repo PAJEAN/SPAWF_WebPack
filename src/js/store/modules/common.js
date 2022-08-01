@@ -1,14 +1,19 @@
-export const keys = {}
+import { COMMON as NS } from './__ns__';
+
+export const keys = {
+    // STATES.
+    s_is_auth: `${NS}_is_auth`,
+    s_roles: `${NS}_roles`,
+    // ACTIONS.
+    // GETTERS.
+}
 
 export const module = {
     state: {
-        is_authentication: false,
-        roles: []
+        [keys.s_is_auth]: false,
+        [keys.s_roles]: []
     },
     actions: {},
     mutations: {},
-    getters: {
-        'is_auth': (state) => state['is_authentication'] ? state['is_authentication'] : false,
-        'roles': (state) => state['roles'] ? state['roles'] : []
-    }
+    getters: {}
 }

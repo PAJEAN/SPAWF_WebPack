@@ -1,31 +1,26 @@
-try {
-    (function() {
-        const PAGE_NAME = 'page-boilerplate';
+(function() {
+    const PAGE_NAME = 'page-boilerplate';
 
-        const TEMPLATE = document.createElement('template');
-        TEMPLATE.innerHTML = /* html */`
+    const TEMPLATE = document.createElement('template');
+    TEMPLATE.innerHTML = /* html */`
 
-            <style></style>
+        <style></style>
 
-            <div id="main-page"></div>
+        <div id="main-page"></div>
 
-        `;
+    `;
 
-        window.customElements.define(PAGE_NAME, class extends HTMLElement {
-            constructor() {
-                super();
-            }
-         
-            connectedCallback () {
-                this.appendChild(TEMPLATE.content.cloneNode(true));
-                this.content = this.querySelector('#main-page');
-            }
-          
-            disconnectedCallback () {}
-        });
-    })();
-}
-catch (err) {
-    console.error(err);
-}
+    window.customElements.define(PAGE_NAME, class extends HTMLElement {
+        constructor() {
+            super();
+        }
+        
+        connectedCallback () {
+            this.appendChild(TEMPLATE.content.cloneNode(true));
+            this.content = this.querySelector('#main-page');
+        }
+        
+        disconnectedCallback () {}
+    });
+})();
 

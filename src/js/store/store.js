@@ -1,4 +1,4 @@
-import { PubSub } from '../lib/pubsub.js';
+import { PubSub } from 'JS/lib/pubsub.js';
 
 export class Store {
     constructor(params) {

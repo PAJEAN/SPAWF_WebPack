@@ -1,34 +1,32 @@
-try {
-    (function() {
-        const COMPONENT_NAME = 'wc-boilerplate';
+/* Components */
+import { COMPONENT_NAMES } from './__ns__';
 
-        const TEMPLATE = document.createElement('template');
-        TEMPLATE.innerHTML = /* html */`
+(function() {
+    const COMPONENT_NAME = 'wc-boilerplate';
 
-            <style></style>
+    const TEMPLATE = document.createElement('template');
+    TEMPLATE.innerHTML = /* html */`
 
-            <div id="main"></div>
+        <style></style>
 
-        `;
+        <div id="main"></div>
 
-        window.customElements.define(COMPONENT_NAME, class extends HTMLElement {
-            constructor() {
-                super();
-                this.attachShadow({mode: 'open'}); /* ShadowRoot */
-            }
+    `;
 
-            connectedCallback() {
-                this.shadowRoot.appendChild(TEMPLATE.content.cloneNode(true));
-                this.content = this.shadowRoot.querySelector('#main');
-            }
+    window.customElements.define(COMPONENT_NAME, class extends HTMLElement {
+        constructor() {
+            super();
+            this.attachShadow({mode: 'open'}); /* ShadowRoot */
+        }
 
-            disconnectedCallback() {}
-            
-            static get observedAttributes() { return []; }
-            attributeChangedCallback(attrName, oldVal, newVal) {} /* Called for every change to attributes listed in the observedAttributes array */
-        });
-    })();
-}
-catch (err) {
-    console.error(err);
-}
+        connectedCallback() {
+            this.shadowRoot.appendChild(TEMPLATE.content.cloneNode(true));
+            this.content = this.shadowRoot.querySelector('#main');
+        }
+
+        disconnectedCallback() {}
+        
+        static get observedAttributes() { return []; }
+        attributeChangedCallback(attrName, oldVal, newVal) {} /* Called for every change to attributes listed in the observedAttributes array */
+    });
+})();

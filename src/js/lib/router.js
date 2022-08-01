@@ -1,4 +1,6 @@
-import { store } from '../store/index.js';
+/* Store */
+import { store } from 'JS/store/index';
+import { keys } from 'JS/store/modules/common';
 
 export default (function () {
     try {
@@ -43,7 +45,7 @@ export default (function () {
                 let matched_route = this._match(hash);
                 if (matched_route) {
                     if (matched_route.roles.length > 0) {
-                        if (store.state.is_auth && store.state.is_auth === true && store.state.roles && matched_route.roles.some((el) => store.state.roles.includes(el))) { // Interception between state.roles and matched_roles.
+                        if (store.state[keys.s_is_auth] && store.state[keys.s_is_auth] === true && store.state[keys.s_roles] && matched_route.roles.some((el) => store.state[keys.s_roles].includes(el))) { // Interception between state.roles and matched_roles.
                             navigate = true;
                         }
                     }

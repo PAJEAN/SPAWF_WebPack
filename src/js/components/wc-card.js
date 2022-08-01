@@ -1,9 +1,11 @@
 /* CSS */
 import css from 'CSS/style.css';
+/* Components */
+import { COMPONENT_NAMES } from './__ns__';
 
 try {
     (function() {
-        const COMPONENT_NAME = 'wc-card';
+        const COMPONENT_NAME = COMPONENT_NAMES.CARD;
 
         const TEMPLATE = document.createElement('template');
         TEMPLATE.innerHTML = /* html */`
