@@ -55,7 +55,7 @@ module.exports = {
   optimization: {},
   plugins: [
     new HtmlWebpackPlugin({ // A HTML page that will load that JavaScript bundle as a script.
-      title: 'Phaser',
+      title: 'SPAWF',
       template: path.resolve(__dirname, './src/template.html'),
       filename: 'index.html'
     }),

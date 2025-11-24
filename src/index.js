@@ -1,12 +1,17 @@
-/*** Libraries ***/
-import './js/lib/router';
+// @ts-check
 
-/*** Components ***/
-import './js/components/wc-card';
+import { Router } from 'JS/lib/router/Router';
+import { ROUTES, ROUTE_CONFIG } from 'JS/lib/router/Routes';
 
-/*** Pages ***/
-import './js/pages/home';
-import './js/pages/about';
+Router.define();
+Router.init(ROUTE_CONFIG);
+
+/*** ROUTES ***/
+import { Home } from 'JS/pages/Home';
+import { About } from 'JS/pages/About';
+
+Home.define(ROUTES.HOME);
+About.define(ROUTES.ABOUT);
 
 /*** CSS ***/
 (function() {

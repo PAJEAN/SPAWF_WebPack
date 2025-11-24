@@ -1,4 +1,6 @@
-import { PubSub } from 'JS/lib/pubsub.js';
+// @ts-check
+
+import { PubSub } from 'JS/lib/core/Pubsub.js';
 
 export class Store {
     constructor(params) {
@@ -18,12 +20,12 @@ export class Store {
         this.state = new Proxy((params.state || {}), {
             set: (state, key, value) => {
                 state[key] = value;
-                console.log(`stateChange: ${this.status}`);
+                console.log(`stateChange: ${key.toString()}`);
 
-                this.events.publish('stateChange', this.state);
+                this.events.publish(key.toString(), this.state);
 
                 if (this.status !== 'mutation') {
-                    console.warn(`You should use a mutation to set ${key}`);
+                    console.warn(`You should use a mutation to set ${key.toString()}`);
                 }
 
                 this.status = 'resting';

@@ -1,10 +1,28 @@
 import { Store } from './store.js';
 /* Modules */
-import { module as common } from 'JS/store/modules/common';
+import { AuthRouter } from 'JS/lib/router/AuthRouter';
+import { MyButton } from 'JS/store/modules/MyButton';
+
+
+export const StoreRouterManager = new AuthRouter();
+export const MyButtonManager = new MyButton();
+
 
 export const store = new Store({
-    'actions': Object.assign(common.actions), // Object.assign(cible, ...sources).
-    'mutations': Object.assign(common.mutations),
-    'getters': Object.assign(common.getters),
-    'state': Object.assign(common.state)
+    'actions': Object.assign(
+        StoreRouterManager.actions,
+        MyButtonManager.actions
+    ), // Object.assign(cible, ...sources).
+    'mutations': Object.assign(
+        StoreRouterManager.mutations,
+        MyButtonManager.mutations
+    ),
+    'getters': Object.assign(
+        StoreRouterManager.getters,
+        MyButtonManager.getters
+    ),
+    'state': Object.assign(
+        StoreRouterManager.states,
+        MyButtonManager.states
+    )
 });
