@@ -147,4 +147,4 @@ export class Card extends BaseCustomElements {
     attributeChangedCallback(attrName, oldVal, newVal) {} /* Called for every change to attributes listed in the observedAttributes array */
 }
 
-Card.define();
+Card.define(import.meta.url);

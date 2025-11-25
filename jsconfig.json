@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
         "target": "ES6", // Specifies which default library (lib.d.ts) to use.
-        "module": "nodenext",
-        "moduleResolution": "nodenext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
         "checkJs": true, // Enable type checking on JavaScript files.
         "baseUrl": ".",
         "paths": {

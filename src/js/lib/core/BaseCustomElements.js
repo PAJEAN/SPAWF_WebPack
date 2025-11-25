@@ -1,9 +1,12 @@
+// @ts-check
+
 export class BaseCustomElements extends HTMLElement {
     static prefix = 'ce'
 
-    static _tag_name = undefined
+    static _tag_name = undefined;
+
     static get tag_name() {
-        return `${this.prefix}-${this.name}`.toLocaleLowerCase();
+        return this._tag_name;
     }
 
     static set tag_name(tag_name) {
@@ -12,17 +15,18 @@ export class BaseCustomElements extends HTMLElement {
 
     /**
      * @param {string} [tag_name] tag_name of a component (wc) is based on his class name and tag_name of pages is based on routes file.
+     * @param {boolean} [is_page] true if component is a page.
      */
-    static define(tag_name = undefined) {
-        if (!customElements.get(tag_name)) {
-            try {                
-                this.tag_name = !tag_name ? this.tag_name : tag_name;
+    static define(tag_name, is_page = false) {
+        
+        try {
+            this.tag_name = is_page ? tag_name : `${this.prefix}-${tag_name.split('/').pop().replace('.js', '').toLocaleLowerCase()}`;
+            if (!customElements.get(this.tag_name)) {
                 customElements.define(this.tag_name, this);
-                
             }
-            catch (err) {
-                console.error(err);
-            }
+        }
+        catch (err) {
+            console.error(err);
         }
     }
 }
