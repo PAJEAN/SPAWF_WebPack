@@ -10,8 +10,8 @@ Router.init(ROUTE_CONFIG);
 import { Home } from 'JS/pages/Home';
 import { About } from 'JS/pages/About';
 
-Home.define(ROUTES.HOME, true);
-About.define(ROUTES.ABOUT, true);
+Home.define(ROUTES.HOME);
+About.define(ROUTES.ABOUT);
 
 /*** CSS ***/
 (function() {

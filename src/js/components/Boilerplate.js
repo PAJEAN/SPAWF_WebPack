@@ -34,4 +34,4 @@ export class Boilerplate extends BaseCustomElements {
     attributeChangedCallback(attrName, oldVal, newVal) {} /* Called for every change to attributes listed in the observedAttributes array */
 }
 
-Boilerplate.define(import.meta.url);
+Boilerplate.define(import.meta.url, true);

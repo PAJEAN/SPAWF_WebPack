@@ -15,12 +15,11 @@ export class BaseCustomElements extends HTMLElement {
 
     /**
      * @param {string} [tag_name] tag_name of a component (wc) is based on his class name and tag_name of pages is based on routes file.
-     * @param {boolean} [is_page] true if component is a page.
+     * @param {boolean} [is_component] true if component.
      */
-    static define(tag_name, is_page = false) {
-        
+    static define(tag_name, is_component = false) {        
         try {
-            this.tag_name = is_page ? tag_name : `${this.prefix}-${tag_name.split('/').pop().replace('.js', '').toLocaleLowerCase()}`;
+            this.tag_name = is_component ? `${this.prefix}-${tag_name.split('/').pop().replace('.js', '').toLocaleLowerCase()}`: tag_name;
             if (!customElements.get(this.tag_name)) {
                 customElements.define(this.tag_name, this);
             }
