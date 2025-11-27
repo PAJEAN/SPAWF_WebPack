@@ -1,14 +1,14 @@
 // @ts-check
 
-import { Router } from 'JS/lib/router/Router';
-import { ROUTES, ROUTE_CONFIG } from 'JS/lib/router/Routes';
+import { Router } from 'JS/lib/router/router';
+import { ROUTES, ROUTE_CONFIG } from 'JS/lib/router/routes';
 
 Router.define('app-router');
 Router.init(ROUTE_CONFIG);
 
 /*** ROUTES ***/
-import { Home } from 'JS/pages/Home';
-import { About } from 'JS/pages/About';
+import { Home } from 'JS/pages/home';
+import { About } from 'JS/pages/about';
 
 Home.define(ROUTES.HOME);
 About.define(ROUTES.ABOUT);

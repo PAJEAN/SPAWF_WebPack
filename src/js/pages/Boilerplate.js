@@ -1,6 +1,6 @@
 // @ts-check
 
-import { BaseCustomElements } from "JS/lib/core/BaseCustomElements";
+import { BaseCustomElements } from "JS/lib/core/base-custom-elements";
 
 const ID = {
     main: 'div-main'
@@ -28,7 +28,4 @@ export class Boilerplate extends BaseCustomElements {
     }
 
     disconnectedCallback() {}
-    
-    static get observedAttributes() { return []; }
-    attributeChangedCallback(attrName, oldVal, newVal) {} /* Called for every change to attributes listed in the observedAttributes array */
 }

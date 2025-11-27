@@ -1,10 +1,10 @@
 // @ts-check
 
-import { BaseCustomElements } from "JS/lib/core/BaseCustomElements";
+import { BaseCustomElements } from "JS/lib/core/base-custom-elements";
 /** CSS **/
 import css from "CSS/style.css";
 /** Components **/
-import { Card } from "JS/components/Card";
+import { Card } from "JS/components/card";
 
 const ID = {
     main: 'div-main'

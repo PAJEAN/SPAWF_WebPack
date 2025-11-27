@@ -1,6 +1,6 @@
 // @ts-check
 
-import { PubSub } from 'JS/lib/core/Pubsub.js';
+import { PubSub } from 'JS/lib/core/pubsub.js';
 
 export class Store {
     constructor(params) {

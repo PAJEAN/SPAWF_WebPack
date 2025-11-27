@@ -1,7 +1,7 @@
 import { Store } from './store.js';
 /* Modules */
-import { AuthRouter } from 'JS/lib/router/AuthRouter';
-import { MyButton } from 'JS/store/modules/MyButton';
+import { AuthRouter } from 'JS/lib/router/auth-router.js';
+import { MyButton } from 'JS/store/modules/my-button.js';
 
 
 export const StoreRouterManager = new AuthRouter();

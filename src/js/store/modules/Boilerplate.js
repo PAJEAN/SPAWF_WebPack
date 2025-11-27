@@ -5,11 +5,9 @@ import { store } from 'JS/store/index';
 export class Boilerplate {
 
     constructor() {
-        this.keys = {
-            // STATES.
-            // ACTIONS.
-            // GETTERS.
-        };
+        // STATES.
+        // ACTIONS.
+        // GETTERS.
     }
 
     get states() {
